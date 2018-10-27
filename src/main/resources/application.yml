@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/booksys
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+swagger:
+  enabled: true
+  title: booking system
+  description: 苏大小管家
+  version: 1.4.1.RELEASE
+  license: swagger的许可证
+  license-url: swagger的许可证地址
+  terms-of-service-url: 服务条款url
+  contact:
+    name: 沈永亮
+    email: withsyl@163.com
+    url: https://blog.ibilidi.cn
+  base-package: swagger的扫描包
+  base-path: 需要处理的基础URL规则
+
+server:
+  port: 8888
