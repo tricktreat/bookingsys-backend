@@ -9,7 +9,6 @@ public class User {
     private String zy;
     private String headurl;
     private String nc;
-    private int manager;
 
     @Override
     public String toString() {
@@ -22,7 +21,19 @@ public class User {
                 ", headurl='" + headurl + '\'' +
                 ", nc='" + nc + '\'' +
                 ", manager=" + manager +
+                ", type=" + type +
                 '}';
+    }
+
+    private int manager;
+    private int type;
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 
     public int getManager() {

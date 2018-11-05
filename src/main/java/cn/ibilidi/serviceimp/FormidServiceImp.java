@@ -30,8 +30,12 @@ public class FormidServiceImp implements IFormidService {
     }
 
     @Override
-    public Formid getFormid(String openid, Date expire) {
-        return formidMapper.getformid(openid,expire);
+    public List<Formid> getFormid(String openid) {
+        Date now=new Date();
+        List<Formid> formids=new ArrayList<>();
+        formids.add(formidMapper.getformid(openid,now));
+        formidMapper.update(openid,now);
+        return formids;
     }
 
     @Override
@@ -41,11 +45,13 @@ public class FormidServiceImp implements IFormidService {
         for (Manager m:managers) {
             String openid=m.getOpenid();
             Date now=new Date();
-            formids.add(formidMapper.getformid(openid,now));
-            formidMapper.update(openid,now);
+            Formid formid=formidMapper.getformid(openid,now);
+            if (formid!=null){
+                formids.add(formid);
+                formidMapper.update(openid,now);
+            }
+
         }
         return formids;
     }
-
-
 }

@@ -1,7 +1,5 @@
 package cn.ibilidi.model;
 
-import java.util.HashMap;
-
 public class Message {
     private String touser;
     private String template_id;

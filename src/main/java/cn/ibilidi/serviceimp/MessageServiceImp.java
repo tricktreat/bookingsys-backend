@@ -40,8 +40,19 @@ public class MessageServiceImp implements IMessageService {
 
     @Override
     public void sendFormMessage(Template template, String template_id) {
+        this.sendFormMessage(template,template_id,"");
+
+    }
+
+    @Override
+    public void sendFormMessage(Template template, String template_id,String openid) {
         String TEMPLATE_ID=template_id;
-        List<Formid> formids=formidService.getFormids();
+        List<Formid> formids;
+        if (openid.equals("managers")){
+            formids=formidService.getFormids();
+        }else {
+            formids=formidService.getFormid(openid);
+        }
         String url= GlobalConstants.WX_TEMPLETE_URL+wxService.getWxToken().get("access_token");
 
         Message message=new Message();

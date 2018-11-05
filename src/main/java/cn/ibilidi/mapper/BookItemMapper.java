@@ -8,7 +8,7 @@ import java.util.List;
 
 @Mapper
 public interface BookItemMapper {
-    @Insert("insert into bookrequests(bookid,openid,status,yysj,comment) values(#{bookid},#{openid},#{status},#{yysj},#{comment})")
+    @Insert("insert into bookrequests(bookid,openid,status,yysj,comment,tools) values(#{bookid},#{openid},#{status},#{yysj},#{comment},#{tools})")
     int insert(BookItem bookItem);
 
     @Select("select * from bookrequests where yysj>=#{sj}")

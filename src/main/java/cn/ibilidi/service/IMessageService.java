@@ -4,4 +4,5 @@ import cn.ibilidi.model.Template;
 
 public interface IMessageService {
     void sendFormMessage(Template template, String template_id);
+    void sendFormMessage(Template template, String template_id,String openid);
 }

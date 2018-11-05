@@ -23,8 +23,8 @@ public class MessageController {
 
     @ApiOperation(value = "发送模板消息")
     @RequestMapping(value = "/sendmessage",method = RequestMethod.POST)
-    public Map<String,Object> sendMessage(@RequestBody Template template, @RequestParam String template_id){
-        messageService.sendFormMessage(template,template_id);
+    public Map<String,Object> sendMessage(@RequestBody Template template, @RequestParam String template_id, @RequestParam String openid){
+        messageService.sendFormMessage(template,template_id,openid);
         Map<String,Object> res=new HashMap<>();
         return res;
     }

@@ -8,10 +8,10 @@ import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface UserMapper {
-    @Insert("insert into users(openid,xm,xh,sjh,zy,headurl,nc) values(#{openid},#{xm},#{xh},#{sjh},#{zy},#{headurl},#{nc})")
+    @Insert("insert into users(openid,xm,xh,sjh,zy,headurl,nc,type) values(#{openid},#{xm},#{xh},#{sjh},#{zy},#{headurl},#{nc},#{type})")
     int insert(User user);
 
-    @Update("update users set nc=#{nc},headurl=#{headurl},xm=#{xm},zy=#{zy},sjh=#{sjh},xh=#{xh} where openid=#{openid}")
+    @Update("update users set nc=#{nc},headurl=#{headurl},xm=#{xm},zy=#{zy},sjh=#{sjh},xh=#{xh},type=#{type} where openid=#{openid}")
     int update(User user);
 
     @Select("select * from users where openid=#{openid} limit 1")

@@ -11,6 +11,7 @@ public class BookItem {
     private List<BookDetail> bookdetaillist;
     private String comment;
     private User user;
+    private int tools;
 
     @Override
     public String toString() {
@@ -22,7 +23,16 @@ public class BookItem {
                 ", bookdetaillist=" + bookdetaillist +
                 ", comment='" + comment + '\'' +
                 ", user=" + user +
+                ", tools='" + tools + '\'' +
                 '}';
+    }
+
+    public int getTools() {
+        return tools;
+    }
+
+    public void setTools(int tools) {
+        this.tools = tools;
     }
 
     public User getUser() {
